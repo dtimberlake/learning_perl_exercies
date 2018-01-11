@@ -1,0 +1,19 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+=pod
+
+Modifies ex4 to capture up to 5 characters behind the original capture.
+
+=cut
+
+
+while (<>) {           # take one input line at a time
+  chomp;
+  if (/(?<word>\b[a-zA-Z]*a\b)(?<after>[\d\D]{0,5})/) {
+    say "'word' contains '$+{word}' and 'after' contains '$+{after}'"
+  } else {
+    print "No match: |$_|\n";
+  }
+}

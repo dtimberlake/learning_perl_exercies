@@ -1,0 +1,19 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+=pod
+
+Matches the string if any word ends in "a" and uses a named capture to contain the word.
+
+=cut
+
+
+while (<>) {           # take one input line at a time
+  chomp;
+  if (/(?<word>\b[a-zA-Z]*a\b)/) {
+    say "'word' contains '$+{word}'"
+  } else {
+    print "No match: |$_|\n";
+  }
+}

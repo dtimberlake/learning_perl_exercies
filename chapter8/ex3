@@ -1,0 +1,19 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+=pod
+
+Matches the string if any word ends in "a" and that $1 contains that word.
+
+=cut
+
+
+while (<>) {           # take one input line at a time
+  chomp;
+  if (/(\b[a-zA-Z]*a\b)/) {
+    say "\$1 contains '$1'"
+  } else {
+    print "No match: |$_|\n";
+  }
+}

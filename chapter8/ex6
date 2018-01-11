@@ -1,0 +1,18 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+=pod
+
+Prints out any input line ending with whitespace. Puts a "~" at the end of the
+ouput line to make the whitespace visible.
+
+=cut
+
+while (<>) {
+  chomp();
+
+  if (/\s$/) {
+    say $_ . "~";
+  }
+}
