@@ -1,0 +1,14 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+use Math::Trig ':pi';
+
+print "Enter radius: ";
+my $radius = <STDIN>;
+
+if ($radius < 0) {
+  say 0;
+} else {
+  say 2 * pi * $radius;
+}

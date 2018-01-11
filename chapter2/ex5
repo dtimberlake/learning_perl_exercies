@@ -1,0 +1,13 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+say "This program repeats a string n number of times.";
+
+print "Enter the string to repeat: ";
+my $s = <STDIN>;
+
+print "Enter number of times to repeat the string: ";
+my $n = <STDIN>;
+
+print $s x $n;

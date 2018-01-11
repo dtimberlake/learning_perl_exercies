@@ -1,0 +1,13 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+say "This program computes the product of two numbers.";
+
+print "Enter your first number: ";
+my $n1 = <STDIN>;
+
+print "Enter your second number: ";
+my $n2 = <STDIN>;
+
+say $n1 * $n2;
