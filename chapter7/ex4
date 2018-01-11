@@ -1,0 +1,17 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+=pod
+
+Prints each line of input that has a word that is capitalized, but not fully capitalized.
+
+=cut
+
+chomp(my @lines = <>);
+
+foreach (@lines) {
+  if (/\b[A-Z][a-z]+\b/) {
+    say $_;
+  }
+}

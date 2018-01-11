@@ -1,0 +1,17 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+=pod
+
+Prints each line of input that two of the mentions both fred and wilma.
+
+=cut
+
+chomp(my @lines = <>);
+
+foreach (@lines) {
+  if (/^(?=.*?\bfred\b)(?=.*?\bwilma\b).*$/) {
+    say $_;
+  }
+}

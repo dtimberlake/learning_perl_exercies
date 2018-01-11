@@ -1,0 +1,18 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+=pod
+
+Prints each line of input that two of the same non-whitespace characters next
+to each other.
+
+=cut
+
+chomp(my @lines = <>);
+
+foreach (@lines) {
+  if (/([^\s])\1/) {
+    say $_;
+  }
+}

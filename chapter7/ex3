@@ -1,0 +1,17 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+=pod
+
+Prints each line of input that has a "." in it..
+
+=cut
+
+chomp(my @lines = <>);
+
+foreach (@lines) {
+  if (/[.]/) {
+    say $_;
+  }
+}
