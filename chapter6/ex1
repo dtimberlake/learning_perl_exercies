@@ -1,0 +1,28 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+use feature qw(signatures);
+no warnings qw(experimental::signatures);
+
+=pod
+
+Asks the user for a given name and report the corresponding family name.
+(Using names from the Flintstones)
+
+=cut
+
+say "Please enter names from the following list. I will then print their family name: (fred, barney, wilma)";
+
+chomp(my @lines = <>);
+
+my %mapping = (
+  fred => "flintstone",
+  barney => "rubble",
+  wilma => "flintstone",
+);
+
+foreach (@lines) {
+  if (exists $mapping{$_}){
+    say $mapping{$_};
+  }
+}

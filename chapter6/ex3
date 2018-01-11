@@ -1,0 +1,30 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+use feature qw(signatures);
+no warnings qw(experimental::signatures);
+
+=pod
+
+Lists all of the keys and values in %ENV. Prints the result in tow columns in
+ASCIIbetical order.
+
+=cut
+
+sub max (@strings) {
+  my $max = length(shift @strings);
+
+  foreach (@strings) {
+    length($_) > $max ? $max = length($_) : 0
+  }
+
+  $max;
+}
+
+my @keys = keys %ENV;
+my $keys_length = max(@keys);
+my $values_length = max(values %ENV);
+
+foreach (sort @keys) {
+  printf "%" . $keys_length . "s   %" . $values_length . "s\n", $_, $ENV{$_};
+}

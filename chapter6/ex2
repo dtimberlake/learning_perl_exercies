@@ -1,0 +1,26 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+use feature qw(signatures);
+no warnings qw(experimental::signatures);
+
+=pod
+
+Reads a series of words until end-of-input, then prints a summary of how many
+times each word was seen.
+
+=cut
+
+say "Enter a list of words (seperate lines):";
+
+chomp(my @lines = <>);
+
+my %totals;
+
+foreach (@lines) {
+  $totals{$_} += 1;
+}
+
+foreach my $key (sort keys %totals) {
+  printf "$key was seen $totals{$key} times.\n";
+}
