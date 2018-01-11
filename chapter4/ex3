@@ -1,0 +1,35 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+use feature qw(signatures);
+no warnings qw(experimental::signatures);
+
+say "This program takes a list of numbers and returns the ones above the average (mean).";
+
+sub above_average (@) {
+  my $sum = 0;
+
+  foreach my $n (@_) {
+    $sum = $sum + $n;
+  }
+
+  my $avg = $sum / @_;
+
+  my @ns_above_avg;
+
+  foreach my $n (@_) {
+    if ($n > $avg) {
+      push(@ns_above_avg, $n);
+    }
+  }
+
+  return @ns_above_avg;
+}
+
+# Code from the book:
+my @fred = above_average(1..10);
+print "\@fred is @fred\n";
+print "(Should be 6 7 8 9 10)\n";
+my @barney = above_average(100, 1..10);
+print "\@barney is @barney\n";
+print "(Should be just 100)\n";

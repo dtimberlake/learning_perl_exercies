@@ -1,0 +1,23 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+use feature qw(signatures);
+no warnings qw(experimental::signatures);
+
+say "This program uses a subroutine named total which returns a list of numbers.";
+
+sub total(@) {
+  my $sum = shift @_;
+  foreach my $i (@_) {
+    $sum += $i;
+  }
+  $sum;
+}
+
+# Code from the book:
+my @fred = qw{ 1 3 5 7 9 };
+my $fred_total = total(@fred);
+print "The total of \@fred is $fred_total.\n";
+print "Enter some numbers on separate lines: ";
+my $user_total = total(<STDIN>);
+print "The total of those numbers is $user_total.\n";

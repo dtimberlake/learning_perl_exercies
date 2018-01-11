@@ -1,0 +1,26 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+use feature qw(signatures);
+no warnings qw(experimental::signatures);
+
+say "This program modifies ex3_2 to tell the new person the names of all the people it has previouisly greeted";
+
+sub greet ($name) {
+  state @prev_names;
+  my $resp;
+
+  if (@prev_names) {
+    $resp = "Hi $name! I've seen: @prev_names";
+  } else {
+    $resp = "Hi $name! You are the first one here!";
+  }
+
+  push(@prev_names, $name);
+  $resp;
+}
+
+say greet("Fred");
+say greet("Barney");
+say greet("Wilma");
+say greet("Betty");

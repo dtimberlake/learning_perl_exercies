@@ -1,0 +1,17 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+use feature qw(signatures);
+no warnings qw(experimental::signatures);
+
+say "This program calculates the sum of the numbers from 1 to 1,000 using the subroutine from ex1.";
+
+sub total(@) {
+  my $sum = shift @_;
+  foreach my $i (@_) {
+    $sum += $i;
+  }
+  $sum;
+}
+
+say "The total of 1 to 1000 is: " . total(1..1000);

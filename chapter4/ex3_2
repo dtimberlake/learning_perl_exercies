@@ -1,0 +1,24 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+use feature qw(signatures);
+no warnings qw(experimental::signatures);
+
+say "This program welcomes the person you name by telling you the name of the last person it greeted.";
+
+sub greet ($name) {
+  state $prev_name;
+  my $resp;
+
+  if ($prev_name) {
+    $resp = "Hi $name! $prev_name is also here!";
+  } else {
+    $resp = "Hi $name! You are the first one here!";
+  }
+
+  $prev_name = $name;
+  $resp;
+}
+
+say greet("Fred");
+say greet("Barney");
