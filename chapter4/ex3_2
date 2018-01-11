@@ -4,7 +4,11 @@ use warnings;
 use feature qw(signatures);
 no warnings qw(experimental::signatures);
 
-say "This program welcomes the person you name by telling you the name of the last person it greeted.";
+=pod
+
+Welcomes the person you name by telling you the name of the last person it greeted.
+
+=cut
 
 sub greet ($name) {
   state $prev_name;

@@ -4,7 +4,11 @@ use warnings;
 use feature qw(signatures);
 no warnings qw(experimental::signatures);
 
-say "This program calculates the sum of the numbers from 1 to 1,000 using the subroutine from ex1.";
+=pod
+
+Calculates the sum of the numbers from 1 to 1,000 using the subroutine from ex1.
+
+=cut
 
 sub total(@) {
   my $sum = shift @_;

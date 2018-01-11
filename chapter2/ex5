@@ -2,7 +2,11 @@
 use v5.24;
 use warnings;
 
-say "This program repeats a string n number of times.";
+=pod
+
+Repeats a user defined string by n times (n is also defined by the user).
+
+=cut
 
 print "Enter the string to repeat: ";
 my $s = <STDIN>;

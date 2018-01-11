@@ -4,7 +4,11 @@ use warnings;
 use feature qw(signatures);
 no warnings qw(experimental::signatures);
 
-say "This program uses a subroutine named total which returns a list of numbers.";
+=pod
+
+Uses a subroutine named total which returns a list of numbers.
+
+=cut
 
 sub total(@) {
   my $sum = shift @_;

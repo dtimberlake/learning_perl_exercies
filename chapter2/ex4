@@ -2,7 +2,11 @@
 use v5.24;
 use warnings;
 
-say "This program computes the product of two numbers.";
+=pod
+
+Computes the product of two numbers provided by the user.
+
+=cut
 
 print "Enter your first number: ";
 my $n1 = <STDIN>;

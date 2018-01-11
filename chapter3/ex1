@@ -2,9 +2,14 @@
 use v5.24;
 use warnings;
 
-say "This program reads a list of strings on seperate lines and prints out the list in reverse order. Press Control-D on Unix or Control-Z on Windows to indicate you are finished with your input.";
+=pod
 
-say "Enter your list of strings below:";
+Reads a list of strings on seperate lines and prints out the list in reverse order.
+
+=cut
+
+say "Enter your list of strings below (Press Control-D on Unix or Control-Z on
+Windows to indicate you are finished with your input):";
 
 my @lines = <STDIN>;
 

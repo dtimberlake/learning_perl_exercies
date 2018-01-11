@@ -4,7 +4,11 @@ use warnings;
 use feature qw(signatures);
 no warnings qw(experimental::signatures);
 
-say "This program takes a list of numbers and returns the ones above the average (mean).";
+=pod
+
+Takes a list of numbers and returns the ones above the average (mean).
+
+=cut
 
 sub above_average (@) {
   my $sum = 0;

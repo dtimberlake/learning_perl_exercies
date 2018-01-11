@@ -4,6 +4,13 @@ use warnings;
 
 use Math::Trig ':pi';
 
+=pod
+
+Determine the circumference of a circle with a radius provided by the user.
+If the radius is less than 0, print "0" to the console.
+
+=cut
+
 print "Enter radius: ";
 my $radius = <STDIN>;
 

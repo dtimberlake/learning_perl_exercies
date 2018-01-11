@@ -1,4 +1,10 @@
 #!/usr/bin/env perl
 use v5.24;
 
+=pod
+
+Simple Hello World implementation in perl.
+
+=cut
+
 say "Hello, World!";

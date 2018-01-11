@@ -4,7 +4,12 @@ use warnings;
 use feature qw(signatures);
 no warnings qw(experimental::signatures);
 
-say "This program modifies ex3_2 to tell the new person the names of all the people it has previouisly greeted";
+=pod
+
+Modifies ex3_2 to tell the new person the names of all the people it has
+previouisly greeted
+
+=cut
 
 sub greet ($name) {
   state @prev_names;
