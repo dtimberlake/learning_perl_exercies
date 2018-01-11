@@ -1,0 +1,29 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+use feature qw(signatures);
+no warnings qw(experimental::signatures);
+
+use POSIX qw(ceil);
+
+=pod
+
+Modifies the script from ex2 so that you can determine the length of the justification.
+
+=cut
+
+sub ruler ($length) {
+  "1234567890" x ceil($length / 10);
+}
+
+say "Input a length for justification then some words below to be printed with a right justification:";
+chomp(my @lines = <>);
+
+my $len = shift @lines;
+
+my $justification = $len <= 30 ? 30 : $len;
+say &ruler($justification);
+
+foreach (@lines) {
+  printf "%". $len . "s\n", $_;
+}

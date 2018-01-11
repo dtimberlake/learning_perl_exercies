@@ -1,0 +1,26 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+use feature qw(signatures);
+no warnings qw(experimental::signatures);
+
+use POSIX qw(ceil);
+
+=pod
+
+Prints strings 20 character right justified. Also prints a ruler before hand.
+
+=cut
+
+sub ruler ($length) {
+  "1234567890" x ceil($length / 10);
+}
+
+say "Input some words below to be printed with a right justification:";
+chomp(my @lines = <>);
+
+say &ruler(30);
+
+foreach (@lines) {
+  printf "%20s\n", $_;
+}

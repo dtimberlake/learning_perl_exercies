@@ -1,0 +1,11 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+=pod
+
+A reverse cat or "tac" implementation in Perl.
+
+=cut
+
+say reverse <>;
