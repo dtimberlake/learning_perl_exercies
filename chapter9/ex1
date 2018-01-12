@@ -1,0 +1,22 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+=pod
+
+Has a pattern that matches three consecutive copies of whatever is in $what.
+
+=cut
+
+my $what = 'fred|barney';
+
+say '$what is set to ' . $what;
+
+while (<>) {
+  chomp();
+  if (/($what){3}/) {
+    say "Matched";
+  } else {
+    say "Did not match";
+  }
+}
