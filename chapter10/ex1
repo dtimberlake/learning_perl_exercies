@@ -1,0 +1,26 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+=pod
+
+Simple number guessing game for the terminal.
+
+=cut
+
+
+my $secret_n = int(1 + rand 100);
+
+say "I'm thinking of a number between 1 and 100. Make your guess on the line below.";
+
+while (<>) {
+  last if /^quit$|^exit$|^\s$/;
+  if ($_ == $secret_n) {
+      say "That's the correct answer!";
+      last;
+  }
+  say "Too low" if $_ < $secret_n;
+  say "Too high" if $_ > $secret_n;
+}
+
+say "Thanks for playing!";
