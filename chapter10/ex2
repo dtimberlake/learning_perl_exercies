@@ -25,7 +25,7 @@ while (<>) {
 
 my $secret_n = int(1 + rand 100);
 
-say "Secret number is $secret_n" if $db;
+say "Secret number is $secret_n" if $cdb;
 
 say "I'm thinking of a number between 1 and 100. Make your guess on the line below.";
 
