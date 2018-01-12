@@ -1,0 +1,42 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+=pod
+
+Modification of ex1 with debug info.
+
+=cut
+
+my $db;
+print "Print debug info? (y/n) ";
+while (<>) {
+  chomp();
+  if (/y/i) {
+    $db = 1;
+    last;
+  } elsif (/n/i) {
+    $db = 0;
+    last;
+  } else {
+    print "Incorrect answer; print debug info? (y/n) ";
+  }
+}
+
+my $secret_n = int(1 + rand 100);
+
+say "Secret number is $secret_n" if $db;
+
+say "I'm thinking of a number between 1 and 100. Make your guess on the line below.";
+
+while (<>) {
+  last if /^quit$|^exit$|^\s$/;
+  if ($_ == $secret_n) {
+      say "That's the correct answer!";
+      last;
+  }
+  say "Too low" if $_ < $secret_n;
+  say "Too high" if $_ > $secret_n;
+}
+
+say "Thanks for playing!";
