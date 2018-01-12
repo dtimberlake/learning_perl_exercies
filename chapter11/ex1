@@ -1,0 +1,15 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+use Module::CoreList;
+
+=pod
+
+Prints a list of all modues that came with v5.24 of Perl to STDOUT.
+
+=cut
+
+foreach (keys %{ $Module::CoreList::version{5.024} }) {
+  say;
+}
