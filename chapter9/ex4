@@ -1,0 +1,28 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+=pod
+
+Adds a copyright line to a perl file after the shebang line.
+
+=cut
+
+my $after_shebang;
+my $skip_file = '';
+$^I = '~';
+
+while (<>) {
+  if ($skip_file eq $ARGV or m{^(## Copyright)}) {
+    $skip_file = $ARGV;
+    print;
+    next;
+  }
+  if ($after_shebang) {
+    print "## Copyright (C) 2018 by Daniel Timberlake\n";
+    $skip_file = $ARGV;
+  } elsif (m{\A#!/.*perl$}) {
+    $after_shebang = 1;
+  }
+  print;
+}
