@@ -1,0 +1,26 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+use Time::Moment;
+
+=pod
+
+Prints the interval between now and a date entered as an argument.
+
+=cut
+
+my ($year, $month, $day) = @ARGV;
+
+my $now = Time::Moment->now;
+my $tm = Time::Moment->new(
+  year  => $year // $now->year,
+  month => $month // $now->month,
+  day   => $day // $now->day
+  );
+
+my $delta_years = $tm->delta_years($now);
+my $delta_months = $tm->delta_months($now) % 12;
+my $delta_days = $tm->delta_days($now) % 365;
+
+say "$delta_years years, $delta_months months, and $delta_days days";
