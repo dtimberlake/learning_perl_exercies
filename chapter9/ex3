@@ -1,0 +1,26 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+
+=pod
+
+Creates a modifed copy of a text file. Every string "Fred" (case-insensitive)
+should be replaced with "Wilma" and every "Wilma" (case-insensitive) to "Fred".
+
+=cut
+
+my $fn = '';
+my $fh;
+
+while (<>) {
+  if ($ARGV . '.out' ne $fn) {
+    if ($fh) {
+      close $fh;
+    }
+    open($fh, '>', $ARGV . '.out') or die "Could not open file";
+    $fn = $ARGV . '.out';
+  }
+
+  s/(Fred)|(Wilma)/$1 ? 'Wilma' : 'Fred'/ieg;
+  print $fh $_;
+}
